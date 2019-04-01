@@ -1,0 +1,48 @@
+canvas
+{
+	border: black 1px solid;
+}
+.CodeMirror
+{
+	width: 500px;
+	height: 100%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+#output {
+	font-family: 'Lucida Console', 'Courier New', Courier, monospace;
+	font-size: 10pt;
+	height: 100px;
+	width: 484px;
+	padding: 8px;
+	overflow: auto;
+	border: black 1px solid;
+	margin-bottom: 6px;
+}
+.help
+{
+	border: 1px solid black;
+	font-family: 'Lucida Console', 'Courier New', Courier, monospace;
+	font-size: 10pt;
+}
+img.button
+{
+    border-style: none;
+    vertical-align: middle;
+}
+#uploadPanel {
+	width: 425px;
+	height: 300px;
+	border: 2px solid #DDD;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background-color: #FEFFEC;
+	text-align: center;
+	color: #BBB;
+	font-size: 2em;
+	font-family: Arial, sans-serif;
+}
+#uploadPanelLabel {
+	position: relative;
+	top: 40%;
+}

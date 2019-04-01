@@ -1,0 +1,14 @@
+﻿/////////////////////////////////////////////////
+//         JUDO RANDOM API
+/////////////////////////////////////////////////
+
+/// <summary>Returns a random int value between 0 (inclusive) and max (exclusive)</summary>
+// Ex: bombX[i] = randomInt(screenWidth - bombSize);
+function randomInt(max) {
+    return Math.floor(Math.random() * max)
+}
+
+/////////////////////////////////////////////////
+//         SUPPORT FUNCTIONS
+/////////////////////////////////////////////////
+

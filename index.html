@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JUDO5</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+		<script type="text/javascript" src="lib/jquery-1.7.1.js"></script>
+		<script type="text/javascript" src="lib/njs_compile.js"></script>
+		<script type="text/javascript" src="lib/codemirror.js"></script>
+		<script type="text/javascript" src="lib/javascript.js"></script>
+        <script type="text/javascript" src="lib/qunit.js"></script>
+		<script type="text/javascript" src="resourceupload.js"></script> <!-- possible race condition with judobase.js -->
+		<script type="text/javascript" src="judoprogs.js"></script>
+		<script type="text/javascript" src="judotests.js"></script>
+
+		<link rel="stylesheet" href="lib/codemirror.css">
+		<link rel="stylesheet" href="lib/qunit.css">
+		<link rel="stylesheet" href="judo.css">
+	</head>
+	<body>
+		<div style="float: left; margin-right: 10px;">
+			<div>
+				<input type="button" id="run" value="Run" />
+				<input type="button" id="stop" value="Stop" disabled="disabled" />
+				<select id="programs"></select>
+                <img id="save" src="images/save.png" class="button" alt="Save" />
+				<img id="delete" src="images/delete.png" class="button" alt="Delete" />
+				<img id="upload" src="images/upload.png" class="button" alt="Upload" />
+				<a href='#' onclick="window.open($('#canvas')[0].toDataURL())"><img class="button" src="images/snapshot.png" /></a>
+				<input type="checkbox" id="compat" checked="checked" />cmpt
+				<span class="help">?</span>
+				<div style="display: none;" id="helpContent">
+					<pre>
+It is now based on Javascript, so some syntax changes:
+* don't use "void main() { }"
+  instead use "function main() { }"
+* don't use "int", "String", "double", "bool"
+  when declaring variables
+  instead use "var" for all of them
+  Javascript is dynamically typed so you don't need to
+  specify the datatype when declaring variables.
+* Limited JUDO API support:
+ <a href="http://judo.sourceforge.net/downloads/JUDOAppAPI.html">JUDO Docs</a>
+ - delay(seconds)
+ - fillCircle(x, y, radius)
+ - drawLine(x1, y1, x2, y2)
+ - clearDrawing()
+ - getColor(red, green, blue)
+ - setColor(color)
+ - printLine(str)
+ - getMouseEvent()
+ - getMouseX()
+ - getMouseY()
+					</pre>
+				</div>
+			</div>
+			<div id="uploadPanel" style="display:none;">
+				<span id=uploadPanelLabel">Drop here to upload</span>
+				<div id="progressbar"></div>
+			</div>
+			<div>
+				<textarea id="code"></textarea>
+			</div>
+            <div style="padding-top: 5px;">
+                <h1 id="qunit-header">QUnit example</h1>  
+                <h2 id="qunit-banner"></h2>  
+                <!--h2 id="qunit-userAgent"></h2-->  
+                <ol id="qunit-tests">  
+                </ol> 
+            </div>
+		</div>
+		<div style="float: left;">
+			<div id="output">
+			</div>
+			<div>
+				<canvas id="canvas" width="500" height="400"></canvas>
+			</div>
+		</div>
+		
+        <!-- JUDO Base libraries -->
+        <script type="text/javascript" src="judobase.js"></script>
+		<script type="text/javascript" src="judobase-graphics.js"></script>
+		<script type="text/javascript" src="judobase-color.js"></script>
+		<script type="text/javascript" src="judobase-misc.js"></script>
+		<script type="text/javascript" src="judobase-random.js"></script>
+		<script type="text/javascript" src="judobase-keyboard.js"></script>
+		<script type="text/javascript" src="judobase-io.js"></script>
+		<script type="text/javascript" src="judobase-mouse.js"></script>
+        <script type="text/javascript" src="judobase-math.js"></script>
+		<script type="text/javascript" language="javascript">
+			if (njsCompile) {
+				NjsCompiler.load("judobase-njs.js");
+			}
+		</script>
+	</body>
+</html>
