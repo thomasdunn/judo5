@@ -10,10 +10,13 @@
 		<script type="text/javascript" src="lib/njs_compile.js"></script>
 		<script type="text/javascript" src="lib/codemirror.js"></script>
 		<script type="text/javascript" src="lib/javascript.js"></script>
+        <script type="text/javascript" src="lib/qunit.js"></script>
 		<script type="text/javascript" src="resourceupload.js"></script> <!-- possible race condition with judobase.js -->
 		<script type="text/javascript" src="judoprogs.js"></script>
+		<script type="text/javascript" src="judotests.js"></script>
 
 		<link rel="stylesheet" href="lib/codemirror.css">
+		<link rel="stylesheet" href="lib/qunit.css">
 		<link rel="stylesheet" href="judo.css">
 	</head>
 	<body>
@@ -35,6 +38,13 @@
 			<div>
 				<textarea id="code"></textarea>
 			</div>
+            <div style="padding-top: 5px;">
+                <h1 id="qunit-header">QUnit example</h1>  
+                <h2 id="qunit-banner"></h2>  
+                <!--h2 id="qunit-userAgent"></h2-->  
+                <ol id="qunit-tests">  
+                </ol> 
+            </div>
 		</div>
 		<div style="float: left;">
 			<div id="output">

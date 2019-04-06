@@ -87,10 +87,6 @@ $('#compat').click(function () {
 	judoCompatibilityMode = this.checked;
 });
 
-$('.help').toggle(
-	function () { $('#helpContent').show(500); },
-	function () { $('#helpContent').hide(500); });
-
 /////////////////////////////////////////////////
 //         Program Loading
 /////////////////////////////////////////////////
@@ -186,9 +182,9 @@ function _progTitle(key) {
 }
 
 /*
-window.sessionStorage.setItem(‘myFirstKey’, ‘myFirstValue’);
-alert(window.sessionStorage.getItem(‘myFirstKey’)); 
-window.sessionStorage.myFirstKey = ‘myFirstValue’; 
+window.sessionStorage.setItem(ï¿½myFirstKeyï¿½, ï¿½myFirstValueï¿½);
+alert(window.sessionStorage.getItem(ï¿½myFirstKeyï¿½)); 
+window.sessionStorage.myFirstKey = ï¿½myFirstValueï¿½; 
 alert(window.sessionStorage.myFirstKey);
  The removeItem(key) function does exactly as you might expect. If a value is
  currently in storage under the specified key
