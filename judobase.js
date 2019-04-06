@@ -35,6 +35,8 @@ var stopButton = $('#stop');
 var saveButton = $('#save');
 var deleteButton = $('#delete');
 var uploadButton = $('#upload');
+var screenshotButton = $('#screenshot');
+
 var programs = $("#programs");
 
 runButton.click(function () {
@@ -79,6 +81,10 @@ deleteButton.click(function () {
 uploadButton.toggle(
 	function () { $('#uploadPanel').show(500); },
 	function () { $('#uploadPanel').hide(500); });
+
+screenshotButton.click(function() {
+	screenshot();
+});
 
 /////////////////////////////////////////////////
 //         Program Loading

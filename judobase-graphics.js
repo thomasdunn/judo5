@@ -159,6 +159,12 @@ function drawImage(name, x, y) {
     }
 }
 
+function screenshot() {
+    var image = document.createElement('img');
+	image.src = canvasElem.toDataURL('data/png');
+	document.body.appendChild(image);
+}
+
 /////////////////////////////////////////////////
 //         SUPPORT FUNCTIONS
 /////////////////////////////////////////////////
