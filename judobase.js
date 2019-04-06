@@ -1,9 +1,6 @@
 /// <summary>Controls if users program code is Narrative JavaScript compiled.  Can turn off for debugging purposes.  Default to true.</summary>
 var njsCompile = getParameterByName("compile") != "0";
 
-/// <summary>Controls if users program code can use semantics from original Java version of JUDO.  i.e. void, int, String, etc.</summary>
-var judoCompatibilityMode = true;
-
 /////////////////////////////////////////////////
 //         Code editor initialization
 /////////////////////////////////////////////////
@@ -82,10 +79,6 @@ deleteButton.click(function () {
 uploadButton.toggle(
 	function () { $('#uploadPanel').show(500); },
 	function () { $('#uploadPanel').hide(500); });
-
-$('#compat').click(function () {
-	judoCompatibilityMode = this.checked;
-});
 
 /////////////////////////////////////////////////
 //         Program Loading
@@ -211,7 +204,6 @@ function run() {
 function runCode(programCode) {
 	var outputCode = '';
 
-	programCode = makeLegacyCompatibilityModifications(programCode);
 	outputCode = getCompiledCode(programCode);
 
 	console.log("// outputCode:");
@@ -324,19 +316,6 @@ function makeNjsModifications(code) {
     code = code.replace('readKey', 'readKey->');
 
     return code;
-}
-
-function makeLegacyCompatibilityModifications(code) {
-	if (judoCompatibilityMode) {
-		code = code.replace(/^(\s*)void(\s+)/gm, '$1function$2');
-		code = code.replace(/^(\s*)int(\s+)/gm, '$1var$2');
-		code = code.replace(/^(\s*)Color(\s+)/gm, '$1var$2');
-		code = code.replace(/^(\s*)String(\s+)/gm, '$1var$2');
-		code = code.replace(/^(\s*)boolean(\s+)/gm, '$1var$2');
-		code = code.replace(/^(\s*)double(\s+)/gm, '$1var$2');
-	}
-
-	return code;
 }
 
 /// <summary>use querystring '?loadjudoprogs=1' to load programs from judoprogs.js.  Default to false.</summary>

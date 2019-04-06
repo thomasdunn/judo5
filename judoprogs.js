@@ -114,51 +114,6 @@ var judoProgs = [
 		})
 	},
 	{
-		title: 'Graphics Demo (judo compat mode)',
-		code: ml(function () {
-/*// this program draws a bunch
-// of colored shapes on the screen
-
-void main () {
-	int width;
-	int height;
-	width = 70;
-	height = 150;
-	Color red = getColor(255, 0, 0);
-	Color lightBlue = getColor(100, 100, 255);
-	Color blue = getColor(0, 0, 255);
-	Color purple = getColor(255, 0, 255);
-	Color darkGoldenrod = getColor(255, 200, 50);
-	Color black = getColor(0, 0, 0);
-	Color white = getColor(255, 255, 255);
-
-	// draw a couple rectanges, one next to the other
-	setColor(red);
-	fillRectangle(10, 20, width, height);
-	setColor(lightBlue);
-	//	drawRectangle(20 + width, 20, width, height);
-
-	// draw a couple ovals, one next to the other
-	setColor(purple);
-	fillCircle(10, 40 + height, width);
-	setColor(darkGoldenrod);
-	//fillOval(20 + width, 40 + height, width, height);
-
-	// draw criss-crossing lines
-	setColor(black);
-	//drawLine(200, 20, 300, 350);
-	//	drawLine(300, 20, 200, 350);
-
-	// draw two circles, the second one
-	// covering up a lot of the first
-	setColor(blue);
-	fillCircle(300, 110, 150);
-	setColor(white);
-	fillCircle(320, 110, 130);
-}*/
-		})
-	},
-	{
 		title: 'Look Out! (manually converted)',
 		code: ml(function () {
 		    /*// Look Out
