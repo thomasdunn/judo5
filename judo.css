@@ -30,6 +30,9 @@ img.button
     border-style: none;
     vertical-align: middle;
 }
+#programs {
+	width: 220px;
+}
 #uploadPanel {
 	width: 425px;
 	height: 300px;

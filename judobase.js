@@ -125,7 +125,7 @@ function addProgramToDropDown(programKey, programTitle) {
 function initPrograms() {
 	var progTitles = retrieveProgramTitles();
 
-	addProgramToDropDown("", "Choose a program or write a new one...");
+	addProgramToDropDown("", "Choose program or write a new one...");
 	for (var i = 0; i < progTitles.length; i++) {
 		addProgramToDropDown(_progKey(progTitles[i]), progTitles[i]);
 	}

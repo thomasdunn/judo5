@@ -19,13 +19,13 @@
 	<body>
 		<div style="float: left; margin-right: 10px;">
 			<div>
-				<input type="button" id="run" value="Run" />
-				<input type="button" id="stop" value="Stop" disabled="disabled" />
+                <button id="run" title="Run">&#x25b6; Run</button>
+                <button id="stop" title="Stop" disabled="disabled">Stop <span style="font-size:0.7em;">&#x2B1B;</span></button>
 				<select id="programs"></select>
-                <img id="save" src="images/save.png" class="button" alt="Save" />
-				<img id="delete" src="images/delete.png" class="button" alt="Delete" />
-				<img id="upload" src="images/upload.png" class="button" alt="Upload" />
-				<img id="screenshot" src="images/snapshot.png" class="button" alt="Screenshot" />
+                <button id="save" title="Save">&#128190;</button>
+				<button id="delete" title="Delete">&#x274C;</button>
+                <button id="upload" title="Upload">&#x1F53C;</button>
+				<button id="screenshot" title="Screenshot">&#x1F4F7;</button>
 			</div>
 			<div id="uploadPanel" style="display:none;">
 				<span id=uploadPanelLabel">Drop here to upload</span>
